@@ -22,7 +22,7 @@ jobs:
               run: npm ci
 
             - name: Build site with Eleventy
-              run: npx @11ty/elventy
+              run: npx @11ty/eleventy
 
             - name: Clean dist branch
               run: |
