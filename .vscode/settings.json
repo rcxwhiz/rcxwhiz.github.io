@@ -5,7 +5,11 @@
     "[markdown]": {
         "editor.wordWrapColumn": 100,
         "editor.wordWrap": "bounded",
-        "editor.quickSuggestions": false
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        }
     },
     "[nunjucks]": {
         "editor.wordWrapColumn": 100,
