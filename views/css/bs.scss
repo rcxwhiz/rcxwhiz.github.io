@@ -4,3 +4,14 @@
 .site-main {
     flex: 1;
 }
+
+.navbar-container {
+    max-width:1140px;
+}
+
+.generic-col {
+    @extend .ms-3;
+    @extend .ms-md-auto;
+    @extend .mb-2;
+    @extend .mb-md-0;
+}
