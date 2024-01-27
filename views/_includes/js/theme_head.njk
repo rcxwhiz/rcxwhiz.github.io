@@ -1,0 +1,64 @@
+<script>
+    const themeKey = 'theme-mode'
+    let themeIndicator = null
+
+    // getters, setters, initializers
+    const getThemeMode = () => localStorage.getItem(themeKey)
+    const setThemeMode = theme => {
+        console.log('setting theme mode')
+        localStorage.setItem(themeKey, theme)
+        refreshPageTheme()
+        refreshThemeIndicator()
+    }
+    const initializeThemeMode = () => {
+        const themeMode = getThemeMode()
+        setThemeMode(themeMode ? themeMode : 'auto')
+    }
+    const getTheme = () => {
+        const themeMode = getThemeMode()
+        if (themeMode == 'auto') {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        }
+        return themeMode
+    }
+
+    // refresh page theme
+    const refreshPageTheme = () => {
+        const theme = getTheme()
+        document.documentElement.setAttribute('data-bs-theme', theme)
+    }
+    // refresh indicator
+    const refreshThemeIndicator = () => {
+        if (themeIndicator === null) {
+            return
+        }
+        const themeMode = getThemeMode()
+        switch (themeMode) {
+            case 'light':
+                themeIndicator.classList.remove('bi-circle-half', 'bi-moon-stars-fill')
+                themeIndicator.classList.add('bi-sun-fill')
+                themeIndicator.title = 'Light theme mode'
+                break
+            case 'dark':
+                themeIndicator.classList.remove('bi-circle-half', 'bi-sun-fill')
+                themeIndicator.classList.add('bi-moon-stars-fill')
+                themeIndicator.title = 'Dark theme mode'
+                break
+            case 'auto':
+                themeIndicator.classList.remove('bi-sun-fill', 'bi-moon-stars-fill')
+                themeIndicator.classList.add('bi-circle-half')
+                themeIndicator.title = 'Auto theme mode'
+                break
+            default:
+                console.warn(`-_- Unknown theme mode: ${themeMode}`)
+                break
+        }
+    }
+
+    // add a listener for device theme changing, only needs to potentially change page theme, not mode
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        refreshPageTheme()
+    })
+
+    initializeThemeMode()
+</script>
