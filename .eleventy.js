@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
 	});
     
     // copy .js files
-    eleventyConfig.addPassthroughCopy("js/");
+    eleventyConfig.addPassthroughCopy("views/js");
 
     // .scss processing
     eleventyConfig.addTemplateFormats("scss");
