@@ -1,80 +1,88 @@
-/*!
- * Color mode toggler for Bootstrap's docs (https://getbootstrap.com/)
- * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under the Creative Commons Attribution 3.0 Unported License.
- */
-
 (() => {
     'use strict'
 
-    const getStoredTheme = () => localStorage.getItem('theme')
-    const setStoredTheme = theme => localStorage.setItem('theme', theme)
+    const switcher = document.getElementById('themeSwitcher')
+    const lightThemeIndicator = document.getElementById('lightThemeIndicator')
+    const darkThemeIndicator = document.getElementById('darkThemeIndicator')
+    const autoThemeIndicator = document.getElementById('autoThemeIndicator')
 
-    const getPreferredTheme = () => {
+    // getters/setters for the theme
+    const getStoredTheme = () => localStorage.getItem('theme')
+    const setStoredTheme = theme => {
+        localStorage.setItem('theme', theme)
+        visuallyRefreshTheme()
+        refreshThemeIndicator(theme)
+    }
+
+    // shows the correct icon on the theme switcher
+    const refreshThemeIndicator = theme => {
+        if (theme === 'auto') {
+            autoThemeIndicator.style.display = 'block'
+            lightThemeIndicator.style.display = 'none'
+            darkThemeIndicator.style.display = 'none'
+        } else if (theme === 'light') {
+            autoThemeIndicator.style.display = 'none'
+            lightThemeIndicator.style.display = 'block'
+            darkThemeIndicator.style.display = 'none'
+        } else if (theme == 'dark') {
+            autoThemeIndicator.style.display = 'none'
+            lightThemeIndicator.style.display = 'none'
+            darkThemeIndicator.style.display = 'block'
+        }
+    }
+
+    // correctly loads/shows initial theme
+    const initializeThemePreference = () => {
         const storedTheme = getStoredTheme()
         if (storedTheme) {
-            return storedTheme
+            visuallyRefreshTheme()
         }
-
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+        setStoredTheme('auto')
+        return 'auto'
     }
 
-    const setTheme = theme => {
-        if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.setAttribute('data-bs-theme', 'dark')
-        } else {
-            document.documentElement.setAttribute('data-bs-theme', theme)
-        }
-    }
-
-    setTheme(getPreferredTheme())
-
-    const showActiveTheme = (theme, focus = false) => {
-        const themeSwitcher = document.querySelector('#bd-theme')
-
-        if (!themeSwitcher) {
-            return
-        }
-
-        const themeSwitcherText = document.querySelector('#bd-theme-text')
-        const activeThemeIcon = document.querySelector('.theme-icon-active use')
-        const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
-        const svgOfActiveBtn = btnToActive.querySelector('svg use').getAttribute('href')
-
-        document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
-            element.classList.remove('active')
-            element.setAttribute('aria-pressed', 'false')
-        })
-
-        btnToActive.classList.add('active')
-        btnToActive.setAttribute('aria-pressed', 'true')
-        activeThemeIcon.setAttribute('href', svgOfActiveBtn)
-        const themeSwitcherLabel = `${themeSwitcherText.textContent} (${btnToActive.dataset.bsThemeValue})`
-        themeSwitcher.setAttribute('aria-label', themeSwitcherLabel)
-
-        if (focus) {
-            themeSwitcher.focus()
-        }
-    }
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    // gives either light or dark
+    const getCurrentEvaluatedTheme = () => {
         const storedTheme = getStoredTheme()
-        if (storedTheme !== 'light' && storedTheme !== 'dark') {
-            setTheme(getPreferredTheme())
+        if (storedTheme === 'auto') {
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                return 'dark'
+            } else {
+                return 'light'
+            }
         }
+        return storedTheme
+    }
+
+    // just sets the document element
+    const visuallyRefreshTheme = () => {
+        const currentEvaluatedTheme = getCurrentEvaluatedTheme()
+        document.documentElement.setAttribute('data-bs-theme', currentEvaluatedTheme)
+    }
+
+    // start things up
+    initializeThemePreference()
+
+    // start subscribers to system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        visuallyRefreshTheme()
+    })
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+        visuallyRefreshTheme()
     })
 
-    window.addEventListener('DOMContentLoaded', () => {
-        showActiveTheme(getPreferredTheme())
+    // cycles to the next theme
+    const toggleTheme = ev => {
+        const currentTheme = getStoredTheme()
+        if (currentTheme == 'auto') {
+            setStoredTheme('dark')
+        } else if (currentTheme == 'dark') {
+            setStoredTheme('light')
+        } else if (currentTheme == 'light') {
+            setStoredTheme('auto')
+        }
+    }
 
-        document.querySelectorAll('[data-bs-theme-value]')
-            .forEach(toggle => {
-                toggle.addEventListener('click', () => {
-                    const theme = toggle.getAttribute('data-bs-theme-value')
-                    setStoredTheme(theme)
-                    setTheme(theme)
-                    showActiveTheme(theme, true)
-                })
-            })
-    })
+    // hook up the click action of the switcher to cycling the theme
+    switcher.onclick = toggleTheme
 })()
