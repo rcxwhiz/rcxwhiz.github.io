@@ -38,7 +38,6 @@
             visuallyRefreshTheme()
         }
         setStoredTheme('auto')
-        return 'auto'
     }
 
     // gives either light or dark
@@ -60,9 +59,6 @@
         document.documentElement.setAttribute('data-bs-theme', currentEvaluatedTheme)
     }
 
-    // start things up
-    initializeThemePreference()
-
     // start subscribers to system theme changes
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
         visuallyRefreshTheme()
@@ -70,6 +66,9 @@
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
         visuallyRefreshTheme()
     })
+
+    // start things up
+    initializeThemePreference()
 
     // cycles to the next theme
     const toggleTheme = ev => {
