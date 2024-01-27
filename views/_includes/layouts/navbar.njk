@@ -7,7 +7,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarMenu">
-        <ul class="navbar-nav generic-col">
+        <ul class="navbar-nav ms-3 ms-md-auto mb-2 mb-md-0">
             <li>
                 <a href="/blog/" title="Blog" class="nav-link hover-success{{ ' active' if page.url.startsWith('/blog/')}}">Blog</a>
             </li>
@@ -18,9 +18,9 @@
                 <a href="/resume/" title="Resume" class="nav-link hover-success{{ ' active' if page.url.startsWith('/resume/')}}">Resume</a>
             </li>
             <li class="d-flex align-items-center">
-                <div id="themeSwitcher" class="nav-link col-auto">
+                <button id="themeSwitcher" class="nav-link d-flex align-items-center justify-content-left">
                     <i id="themeIndicator" class="bi bi-circle-half"></i>
-                </div>
+                </button>
             </li>
         </ul>
     </div>
