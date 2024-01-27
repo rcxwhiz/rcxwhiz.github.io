@@ -2,6 +2,7 @@
 tags: ["eleventy", "Node", "GitHub Actions", "GitHub Pages"]
 title: Eleventy Website
 date: 2024-01-25
+updated: 2024-01-26
 repo: https://github.com/rcxwhiz/rcxwhiz.github.io
 demo: https://joshbedwell.com
 ---

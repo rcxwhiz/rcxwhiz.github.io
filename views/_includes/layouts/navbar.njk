@@ -9,13 +9,13 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav generic-col">
             <li>
-                <a href="/blog/" title="Blog" class="nav-link hover-success">Blog</a>
+                <a href="/blog/" title="Blog" class="nav-link hover-success{{ ' active' if page.url.startsWith('/blog/')}}">Blog</a>
             </li>
             <li>
-                <a href="/projects/" title="Projects" class="nav-link hover-success">Projects</a>
+                <a href="/projects/" title="Projects" class="nav-link hover-success{{ ' active' if page.url.startsWith('/projects/')}}">Projects</a>
             </li>
             <li>
-                <a href="/resume/" title="Resume" class="nav-link hover-success">Resume</a>
+                <a href="/resume/" title="Resume" class="nav-link hover-success{{ ' active' if page.url.startsWith('/resume/')}}">Resume</a>
             </li>
             <li class="d-flex align-items-center">
                 <button id="theme-toggler" class="nav-link d-flex align-items-center justify-content-left" title="Auto theme mode">
