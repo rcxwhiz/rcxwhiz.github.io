@@ -2,8 +2,25 @@
 title: Resume
 ---
 
-{% extends "layouts/base.njk" %}
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-{% block content %}
-<p>This is the resume (will need to figure out formatting).</p>
-{% endblock %}
+        <link href="/css/resume.css" rel="stylesheet">
+
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <main class="resume">
+            <div class="container-sm resume-container">
+                {% include "layouts/resume/header.njk" %}
+                {% include "layouts/resume/education.njk" %}
+                {% include "layouts/resume/experience.njk" %}
+                {% include "layouts/resume/publications.njk" %}
+            </div>
+        </main>
+    </body>
+</html>
