@@ -5,7 +5,6 @@
     // getters, setters, initializers
     const getThemeMode = () => localStorage.getItem(themeKey)
     const setThemeMode = theme => {
-        console.log('setting theme mode')
         localStorage.setItem(themeKey, theme)
         refreshPageTheme()
         refreshThemeIndicator()
