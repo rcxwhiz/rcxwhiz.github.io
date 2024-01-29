@@ -1,0 +1,47 @@
+<section>
+    <div class="row">
+        <div class="col-auto">
+            <h2>{{ section.title }}</h2>
+        </div>
+    </div>
+    {% for item in section.items %}
+        <div class="row justify-content-between mt-2">
+            <div class="item-wrapper">
+                <h3 class="title">{{ item.title_row.title }}</h3>
+            </div>
+            {% if item.title_row.note %}
+                <div class="note-wrapper">
+                    <span class="note">{{ item.title_row.note }}</span>
+                </div>
+            {% endif %}
+        </div>
+        {% for row in item.subtitle_rows %}
+            <div class="row justify-content-between">
+                <div class="item-wrapper">
+                    <p class="subtitle">{{ row.subtitle }}</p>
+                </div>
+                {% if row.note %}
+                    <div class="note-wrapper">
+                        <span class="note">{{ row.note }}</span>
+                    </div>
+                {% endif %}
+            </div>
+        {% endfor %}
+        {% if item.details %}
+            <div class="row">
+                <div class="details-wrapper">
+                    <div class="details">
+                        <p>{{ item.details.note }}</p>
+                        {% if item.details.tags %}
+                            <div class="skills">
+                                {% for tag in item.details.tags %}
+                                    <span>{{ tag }}</span>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>

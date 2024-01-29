@@ -1,0 +1,144 @@
+[
+    {
+        "title": "Education",
+        "items": [
+            {
+                "title_row": {
+                    "title": "Brigham Young University",
+                    "note": "April 2023"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "Bachelor of Science, Computer Science",
+                        "note": "Provo, UT"
+                    },
+                    {
+                        "subtitle": "Emphasis in Software Engineering"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "Experience",
+        "items": [
+            {
+                "title_row": {
+                    "title": "Research Assistant",
+                    "note": "Apr 2021 - May 2023"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "BYU Social Technology and Privacy Lab",
+                        "note": "Provo, UT"
+                    }
+                ],
+                "details": {
+                    "note": "As a member of multiple interdisciplinary research teams, I applied natural language processing and open coding techniques to analyze participant data, led the development of neurodiverse education material and software prototypes, and designed and implemented the lab website. I am a coauthor of two papers published from this lab.",
+                    "tags": ["Python", "Django", "Javascript + Typescript"]
+                }
+            },
+            {
+                "title_row": {
+                    "title": "Capstone Experience",
+                    "note": "Aug 2022 - April 2023"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "Partners Personnel",
+                        "note": "Provo, UT"
+                    }
+                ],
+                "details": {
+                    "note": "I worked within a scrum team to develop and deliver a modern web app and replace an MS Access solution. I led the integration with MS Active Directory, quality assurance through a robust testing framework, and deployment to production.",
+                    "tags": ["Python", "Django", "Agile/Scrum", "MS Active Directory", "SQL"]
+                }
+            },
+            {
+                "title_row": {
+                    "title": "Research Assistant",
+                    "note": "Dec 2020 - Aug 2021"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "BYU Chemical Engineering",
+                        "note": "Provo, UT"
+                    }
+                ],
+                "details": {
+                    "note": "I overhauled and optimized sootlib, a C++ combution simulation library. I improved the accuracy and maintainability of the codebase by introducing unit testing. I improved the ergonomics of the library by creating a universal CMake build configuration, and streamlining the API to be simple and intuitive. I facilitated the completion and publication of the library by reducing the complexity of models with behavior based interfaces.",
+                    "tags": ["C++", "CMake", "Google Test"]
+                }
+            },
+            {
+                "title_row": {
+                    "title": "Teaching Assistant",
+                    "note": "Jan 2019 - Dec 2020"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "BYU Chemical Engineering & Computer Science",
+                        "note": "Provo, UT"
+                    }
+                ],
+                "details": {
+                    "note": "I instructed students in various underclass programming courses. Within the computer science department I assisted instruction in several foundational C++ courses, teaching classes, inheritance, templating, and memory management. Within the chemical engineering department I instructed students in numerical tools courses, covering various Python data analysis and computational solutions to engineering problems.",
+                    "tags": ["Python", "C++"]
+                }
+            }
+        ]
+    },
+    {
+        "title": "Publications",
+        "items": [
+            {
+                "title_row": {
+                    "title": "\"I Know I’m Being Observed:\" Video Interventions to Educate Users about Targeted Advertising on Facebook.",
+                    "note": "2024"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "ACM CHI 2024"
+                    },
+                    {
+                        "subtitle": "Full citation pending"
+                    }
+                ]
+            },
+            {
+                "title_row": {
+                    "title": "A Tale of Two Cultures: Comparing Interpersonal Information Disclosure Norms on Twitter.",
+                    "note": "Oct 2023"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "Mondal, Mainack., et al."
+                    },
+                    {
+                        "subtitle": "Proceedings of the ACM on Human-Computer Interaction, vol. 7, no. CSCW2"
+                    },
+                    {
+                        "subtitle": "https://doi.org/10.1145/3610045"
+                    }
+                ]
+            },
+            {
+                "title_row": {
+                    "title": "SootLib: A soot model library for combustion simulation.",
+                    "note": "Mar 2023"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "Stephens, Victoria B., et al."
+                    },
+                    {
+                        "subtitle": "SoftwareX, vol. 22"
+                    },
+                    {
+                        "subtitle": "https://doi.org/10.1016/j.softx.2023.101375"
+                    }
+                ]
+            }
+        ]
+    }
+]

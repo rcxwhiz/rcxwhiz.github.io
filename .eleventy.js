@@ -14,8 +14,8 @@ module.exports = function(eleventyConfig) {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 	});
     
-    // copy .js files
-    eleventyConfig.addPassthroughCopy("views/js");
+    // copy public files
+    eleventyConfig.addPassthroughCopy("public");
 
     // .scss processing
     eleventyConfig.addTemplateFormats("scss");

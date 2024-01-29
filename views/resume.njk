@@ -8,7 +8,7 @@ title: Resume
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <link href="/css/resume.css" rel="stylesheet">
+        <link href="/css/bs.css" rel="stylesheet">
 
         <title>{{ title }}</title>
     </head>
@@ -17,9 +17,9 @@ title: Resume
         <main class="resume">
             <div class="container-sm resume-container">
                 {% include "layouts/resume/header.njk" %}
-                {% include "layouts/resume/education.njk" %}
-                {% include "layouts/resume/experience.njk" %}
-                {% include "layouts/resume/publications.njk" %}
+                {% for section in resume_sections %}
+                    {% include "layouts/resume/section.njk" %}
+                {% endfor %}
             </div>
         </main>
     </body>
