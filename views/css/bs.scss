@@ -177,3 +177,15 @@
     @extend .align-items-end;
 }
 
+.breadcrumbs {
+    @extend .m-0;
+    @extend .fst-italic;
+}
+
+.breadcrumbs a {
+    @extend .text-decoration-none;
+}
+
+.breadcrumbs a:not(:first-child)::before {
+    content: ' › ';
+}

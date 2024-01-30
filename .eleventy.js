@@ -18,6 +18,22 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('isLink', (linkStr) => {
         return urlPattern.test(linkStr);
     });
+
+    eleventyConfig.addFilter('breadcrumbs', (linkStr) => {
+        const segments = linkStr.split('/').filter(segment => segment !== '');
+        
+        let currentPath = '/';
+        const result = [];
+
+        for (const segment of segments) {
+            currentPath += `${segment}/`;
+            result.push([segment, currentPath]);
+        }
+
+        result.unshift(['root', '/']);
+
+        return result;
+    });
     
     // copy public files
     eleventyConfig.addPassthroughCopy("public");

@@ -1,0 +1,31 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<div class="row justify-content-center mt-4">
+    <div class="generic-col">
+        <div class="mb-1">
+            {% include "layouts/breadcrumbs.njk" %}
+        </div>
+        <div>
+            <h2>{{ title }}</h2>
+
+            <p class="m-0 fw-light"><time datetime="{{ page.date | htmlDateString }}">{{ page.date | readableDate }}</time>
+            {% if updated %}
+                • Updated <time datetime="{{ updated | htmlDateString }}">{{ updated | readableDate }}</time>
+            {% endif %}
+            </p>
+            {% if repo %}
+                <p class="m-0 fw-light">Repo: <a class="link-success" href="{{ repo }}">{{ repo.split('//')[1] }}</a></p>
+            {% endif %}
+            {% if demo %}
+                <p class="m-0 fw-light">Demo: <a class="link-success" href="{{ demo }}">{{ demo.split('//')[1] }}</a></p>
+            {% endif %}
+            <hr>
+        </div>
+        <div>
+            {{ content | safe }}
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
