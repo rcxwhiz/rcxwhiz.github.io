@@ -187,7 +187,7 @@
 }
 
 .breadcrumbs a:not(:first-child)::before {
-    content: ' › ';
+    content: ' » ';
 }
 
 .article-card .entry-meta {
@@ -204,4 +204,9 @@
 
 .hover-success:hover.emphasis,#theme-toggler>span:hover.emphasis,.entry #TableOfContents ul li a:hover.emphasis,.entry #TableOfContents ol li a:hover.emphasis,.hover-success:active.emphasis,#theme-toggler>span:active.emphasis,.entry #TableOfContents ul li a:active.emphasis,.entry #TableOfContents ol li a:active.emphasis {
     color: var(--bs-success-text-emphasis)!important
+}
+
+.page-link {
+    @extend .text-success;
+    @extend .fw-medium;
 }

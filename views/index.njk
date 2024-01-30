@@ -1,6 +1,10 @@
 ---
 title: Home
-numPostsToShow: 5
+pagination:
+    data: collections.post
+    size: 5
+    reverse: true
+    alias: postlist
 ---
 
 {% extends "layouts/base.njk" %}
@@ -28,10 +32,12 @@ numPostsToShow: 5
                     </a>
                 </div>
             </footer>
+            <h3>Recent Posts</h3>
         </article>
     </div>
 </div>
-{% set postlist = collections.post | reverse %}
 {% set include_src_tag = true %}
-{% include "layouts/postlist.njk" %}
+{% for post in postlist %}
+    {% include "layouts/post_preview.njk" %}
+{% endfor %}
 {% endblock %}

@@ -4,7 +4,6 @@ title: Eleventy Website
 date: 2024-01-25
 updated: 2024-01-30
 repo: https://github.com/rcxwhiz/rcxwhiz.github.io
-demo: https://joshbedwell.com
 ---
 
 This is what I'm using to write/host this website! What an appropriate first project to write about.
