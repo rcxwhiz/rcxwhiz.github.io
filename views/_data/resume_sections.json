@@ -35,13 +35,13 @@
                 ],
                 "details": {
                     "note": "As a member of multiple interdisciplinary research teams, I applied natural language processing and open coding techniques to analyze participant data, led the development of neurodiverse education material and software prototypes, and designed and implemented the lab website. I am a coauthor of two papers published from this lab.",
-                    "tags": ["Python", "Django", "Javascript + Typescript"]
+                    "tags": ["Python", "Django", "Javascript", "Typescript"]
                 }
             },
             {
                 "title_row": {
                     "title": "Capstone Experience",
-                    "note": "Aug 2022 - April 2023"
+                    "note": "Aug 2022 - Apr 2023"
                 },
                 "subtitle_rows": [
                     {

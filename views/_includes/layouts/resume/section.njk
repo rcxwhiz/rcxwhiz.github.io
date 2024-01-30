@@ -18,7 +18,11 @@
         {% for row in item.subtitle_rows %}
             <div class="row justify-content-between">
                 <div class="item-wrapper">
-                    <p class="subtitle">{{ row.subtitle }}</p>
+                    {% if row.subtitle | isLink %}
+                        <p class="subtitle"><a class="link-secondary" href="{{ row.subtitle }}">{{ row.subtitle }}</a></p>
+                    {% else %}
+                        <p class="subtitle">{{ row.subtitle }}</p>
+                    {% endif %}
                 </div>
                 {% if row.note %}
                     <div class="note-wrapper">
