@@ -34,6 +34,12 @@ module.exports = function(eleventyConfig) {
 
         return result;
     });
+
+    eleventyConfig.setFrontMatterParsingOptions({
+        excerpt: true,
+        excerpt_alias: "post_excerpt",
+        excerpt_separator: '<!-- excerpt -->'
+    });
     
     // copy public files
     eleventyConfig.addPassthroughCopy("public");

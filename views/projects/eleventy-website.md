@@ -7,7 +7,9 @@ repo: https://github.com/rcxwhiz/rcxwhiz.github.io
 demo: https://joshbedwell.com
 ---
 
-This is what I'm using to write/host this website! What an appropriate first project to write about. 
+This is what I'm using to write/host this website! What an appropriate first project to write about.
+
+<!-- excerpt -->
 
 ## Motivation
 

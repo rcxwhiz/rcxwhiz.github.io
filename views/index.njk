@@ -1,12 +1,13 @@
 ---
 title: Home
+numPostsToShow: 5
 ---
 
 {% extends "layouts/base.njk" %}
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-11 col-md-10 col-lg-9 col-xl-7">
+    <div class="generic-col">
         <article class="mt-2 mb-3 my-md-3">
             <header>
                 <h1 class="mb-3">Josh Bedwell</h1>
@@ -16,9 +17,6 @@ title: Home
                 <p class="m-0 lh-base">
                     I recently graduated with a degree in computer science & software engineering. I have a background in academic research as well as developing and deploying various applications. This website has a collection of the things I've worked on with some of the thoughts and discoveries I had along the way.
                 </p>
-                {# <p class="text-danger">
-                    This website is majorly under construction as I'm switching it over. Go to <a href="https://old.joshbedwell.com">old.joshbedwell.com</a> to see my typical content.
-                </p> #}
             </div>
             <footer>
                 <div class="row justify-content-left align-items-center my-3 h1">
@@ -33,4 +31,7 @@ title: Home
         </article>
     </div>
 </div>
+{% set postlist = collections.post | reverse %}
+{% set include_src_tag = true %}
+{% include "layouts/postlist.njk" %}
 {% endblock %}

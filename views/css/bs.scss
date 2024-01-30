@@ -189,3 +189,19 @@
 .breadcrumbs a:not(:first-child)::before {
     content: ' › ';
 }
+
+.article-card .entry-meta {
+    @extend .mt-1;
+}
+
+.mb-gap:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+.hover-success:hover,#theme-toggler>span:hover,.entry #TableOfContents ul li a:hover,.entry #TableOfContents ol li a:hover,.hover-success:active,#theme-toggler>span:active,.entry #TableOfContents ul li a:active,.entry #TableOfContents ol li a:active {
+    color: var(--bs-success)!important
+}
+
+.hover-success:hover.emphasis,#theme-toggler>span:hover.emphasis,.entry #TableOfContents ul li a:hover.emphasis,.entry #TableOfContents ol li a:hover.emphasis,.hover-success:active.emphasis,#theme-toggler>span:active.emphasis,.entry #TableOfContents ul li a:active.emphasis,.entry #TableOfContents ol li a:active.emphasis {
+    color: var(--bs-success-text-emphasis)!important
+}
