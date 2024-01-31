@@ -9,7 +9,11 @@
                 </h2>
             </header>
             <div class="entry-content my-2 fs-6">
-                <p>{{ post.data.post_excerpt | safe }}</p>
+                {% if post.data.excerpt %}
+                    <p>{{ post.data.excerpt | safe }}</p>
+                {% else %}
+                    {{ post.content.slice(0, post.content.indexOf('\n')).slice(0, 100) | safe}}
+                {% endif %}
             </div>
             <footer class="entry-meta fw-light d-flex align-items-center flex-wrap">
                 <time datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>{% if include_src_tag %}{% if post in collections.blog_post %}&nbsp;• blog{% endif %}{% if post in collections.project %}&nbsp;• projects{% endif %}{% endif %}
