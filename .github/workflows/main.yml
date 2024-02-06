@@ -18,9 +18,8 @@ jobs:
           install_dependencies: true
 
       - name: Upload artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: _site/
 
   deploy:
