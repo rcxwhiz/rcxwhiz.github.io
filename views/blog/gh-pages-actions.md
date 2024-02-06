@@ -98,7 +98,7 @@ jobs:
 
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: {% raw %}${{ steps.deployment.outputs.page_url }}{% endraw %}
 
     steps:
       - name: Deploy to GitHub Pages
