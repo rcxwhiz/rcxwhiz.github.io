@@ -23,4 +23,4 @@ Run `npx @11ty/eleventy --serve` to start a file watch and a server, which will 
 
 ## Deployment
 
-This repository is configured with GitHub pages, which is pulling from the `dist` branch. Anytime there is a push to main, GitHub actions compiles the site to the `dist` branch, and it is automatically deployed.
+The workflow in `.github/workflows/main.yml` will automatically build and deploy the site when there are changes on the `main` branch.
