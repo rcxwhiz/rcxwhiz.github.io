@@ -30,3 +30,4 @@ jobs:
                 directory: _site
                 branch: dist
                 force: true
+                checkout-orphan: true
