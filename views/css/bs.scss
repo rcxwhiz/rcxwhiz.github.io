@@ -210,3 +210,10 @@
     @extend .text-success;
     @extend .fw-medium;
 }
+
+pre {
+    @extend .py-2;
+    @extend .px-3;
+    @extend .bg-body-secondary;
+    @extend .rounded-3;
+}
