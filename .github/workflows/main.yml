@@ -2,13 +2,12 @@ name: Build and Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,6 +16,11 @@ jobs:
         uses: TartanLlama/actions-eleventy@v1.3
         with:
           install_dependencies: true
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          path: _site/
 
   deploy:
     needs: build
@@ -33,5 +37,3 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: _site
