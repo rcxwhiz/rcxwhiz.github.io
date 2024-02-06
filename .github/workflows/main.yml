@@ -1,33 +1,27 @@
 name: Build and Deploy
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches:
+      - main
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v4
+      - name: Build Eleventy
+        uses: TartanLlama/actions-eleventy@v1.3
+        with:
+          install_dependencies: true
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                node-version: 21
-
-            - name: Install dependencies
-              run: npm ci
-
-            - name: Build site with Eleventy
-              run: npx @11ty/eleventy
-
-            - name: Push changes to dist branch
-              uses: zyrouge/github-push-action@v1
-              with:
-                directory: _site
-                branch: dist
-                force: true
-                checkout-orphan: true
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: _site
