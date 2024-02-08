@@ -211,9 +211,19 @@
     @extend .fw-medium;
 }
 
-pre {
+.post-content pre {
     @extend .py-2;
     @extend .px-3;
     @extend .bg-body-secondary;
     @extend .rounded-3;
+}
+
+.post-content table {
+    @extend .table;
+    @extend .table-striped;
+    @extend .table-sm;  // do I want this everywhere? need a way to apply this to certain tables
+}
+
+.post-content tbody, .post-content thead {
+    white-space: nowrap;
 }
