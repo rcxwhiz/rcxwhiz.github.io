@@ -20,7 +20,7 @@ on:
   push:
     branches: [ main ]
 ```
-If you've never used GitHub Actions before, this means that this script will be triggered whenever there is a commit pushed to the `main` branch, which includes things like pull requests being merged. It makes sense that we only want the site to be redeployed when there are pushes to `main`, because that is essentially our release or deploy branch.
+If you've never used GitHub Actions before, this means that this script will be triggered whenever there is a commit pushed to the `main` branch, which includes things like pull requests being merged. It makes sense that we only want the site to be redeployed when there are pushes to `main` because that is essentially our release or deploy branch.
 
 ```
 jobs:
@@ -65,7 +65,7 @@ In this step I am using somebody else's Action to build my Eleventy site. I cert
   run: npx @11ty/eleventy
 ```
 
-If you are using a different static site generator (Next.js, Jekyll, Astro, etc.) you can either find an action that will build your site or just throw in the `run` commands necessary to build your site. By default the built files of my Eleventy site will be put into `_site/`. I set `install_dependencies` to `true` because my project uses `bootstrap`, `sass` and `luxon` to build my website. 
+If you are using a different static site generator (Next.js, Jekyll, Astro, etc.) you can either find an action that will build your site or just throw in the `run` commands necessary to build your site. By default, the built files of my Eleventy site will be put into `_site/`. I set `install_dependencies` to `true` because my project uses `bootstrap`, `sass` and `luxon` to build my website. 
 
 ## Uploading an artifact
 

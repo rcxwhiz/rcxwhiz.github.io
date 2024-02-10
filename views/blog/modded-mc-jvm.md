@@ -5,23 +5,23 @@ date: 2024-02-07
 excerpt: I explored and empirically determined the best modded Minecraft JVM settings through hours of sound testing. The results are simpler than you would think.
 ---
 
-Any modded Minecraft enthusiast knows the struggle of getting the game to run well. When you stick together hundreds of comminty written mods into Minecraft (a somewhat poorly optimized game to begin with), you end up with a RAM hungry beast that is difficult to feed and control. There has been a long history of specificly tunned JVM arguments, RAM allocations, and obscure JREs to get the most out of your Minecraft and modded Minecraft performance. 
+Any modded Minecraft enthusiast knows the struggle of getting the game to run well. When you stick together hundreds of community-written mods into Minecraft (a somewhat poorly optimized game to begin with), you end up with a RAM-hungry beast that is difficult to feed and control. There has been a long history of specifically tunned JVM arguments, RAM allocations, and obscure JREs to get the most out of your Minecraft and modded Minecraft performance.
 
 I'll go ahead and spoil the conclusion a little bit: none of this really matters anymore. Modern mainstream JVMs are very capable for the workload of modded Minecraft, without any special adjustments or tweaking. Don't believe me? I didn't believe it either, so I decided to do hours of standardized benchmarks to figure out once and for all what the deal is.
 
 ## Choosing a JVM
 
-There are plenty of JVMs out there, but I focused on two families for testing: Eclipse's Adoptium Temurin, and Oracle's GraalVM. Adoptium is essentially the defacto *standard* JVM these days. If you don't know what you're doing, this is the JVM you want. 
+There are plenty of JVMs out there, but I focused on two families for testing: Eclipse's Adoptium Temurin, and Oracle's GraalVM. Adoptium is essentially the defacto *standard* JVM these days. If you don't know what you're doing, this is the JVM you want.
 
-GraalVM has an interesting history. The idea behind GraalVM was to make Java more practical in serverless applications like AWS Lambda, where the long time to start a JVM is a performance killer and racks up bills. It was also supposed to need less RAM. The GraalVM runtime supposedly included more aggresive optimizations than any other JVM before, but beyond that, the headline feature was *native image* - the ability to compile your Java program into a native executable. No more JVM. I don't think this feature was ever meant to give revolutionary performance in your application, but the startup time was supposed to be eliminated. Native image is irrelevant to modded Minecraft players because it is impracticle (maybe impossible) to compile all the different mods together. For modded Minecraft players, the relevant feature is the "aggressive optimizations".
+GraalVM has an interesting history. The idea behind GraalVM was to make Java more practical in serverless applications like AWS Lambda, where the long time to start a JVM is a performance killer and racks up bills. It was also supposed to need less RAM. The GraalVM runtime supposedly included more aggressive optimizations than any other JVM before, but beyond that, the headline feature was *native image* - the ability to compile your Java program into a native executable. No more JVM. I don't think this feature was ever meant to give revolutionary performance in your application, but the startup time was supposed to be eliminated. Native image is irrelevant to modded Minecraft players because it is impractical (maybe impossible) to compile all the different mods together. For modded Minecraft players, the relevant feature is the "aggressive optimizations".
 
-GraalVM used to be split into community edition and enterprise edition. I assume the original idea was to charge money for the enterprise edition, but by the time I was interested in it it was free. The idea was that there were "optimizations" that only existed in the enterprise edition, so you would want to use that one. These days the community/enterprise editions have been depreciated, and there is one "Oracle GraalVM" which contains all the optimizations etc. If you are going to use GraalVM these days, this is the version you should use.
+GraalVM used to be split into community edition and enterprise edition. I assume the original idea was to charge money for the enterprise edition, but by the time I was interested in it, it was free. The idea was that there were "optimizations" that only existed in the enterprise edition, so you would want to use that one. These days the community/enterprise editions have been depreciated, and there is one "Oracle GraalVM" which contains all the optimizations, etc. If you are going to use GraalVM these days, this is the version you should use.
 
 In review, I tested two JVMs: the more "vanilla" Adoptium, and the lean mean virtual machine GraalVM. There are also a few tests with GraalVM Enterprise Edition, but it was not better than Oracle GraalVM.
 
 ## JVM version
 
-There are different JVM versions. For a while they have been on an annual release cycle, so only some of the major versions actually matter. The main Java versions that matter for Minecraft are 8, 17 and 21. Older versions of Minecraft (<1.18) officially support Java 8. Newer versions of Minecraft (>=1.18) support Java 17. 
+There are different JVM versions. For a while, they have been on an annual release cycle, so only some of the major versions actually matter. The main Java versions that matter for Minecraft are 8, 17, and 21. Older versions of Minecraft (<1.18) officially support Java 8. Newer versions of Minecraft (>=1.18) support Java 17.
 
 Java version updates improve the efficiency of the JVM, but they also just add language features and so on. Java 18 is not necessarily "faster" than Java 17, and when there are optimizations to the newest Java version, they are backported as well as possible.
 
@@ -31,9 +31,9 @@ For my testing I tried Java 17 and 21.
 
 ## JVM arguments & garbage collectors
 
-If you are somewhat familiar with Java, you might have heard of "garbage collection". When programming in Java, you don't have to manually deal with lifetime of the objects and structures you make (which take up RAM). You create them, and they magically go away when they're no longer needed. The magically going away is garbage collection, and there are many different strategies and algorithms for doing it efficiently. The more RAM that needs to magically go away, the more expensive and time consuming garbage collection is. This will be felt in periodic freezes of your Java program (the garbage collector taking so long it has to momentarily freeze the program). Modded Minecraft uses **A LOT** of RAM, so garbage collection can be a struggle.
+If you are somewhat familiar with Java, you might have heard of "garbage collection". When programming in Java, you don't have to manually deal with the lifetime of the objects and structures you make (which take up RAM). You create them, and they magically go away when they're no longer needed. The magically going away is garbage collection, and there are many different strategies and algorithms for doing it efficiently. The more RAM that needs to magically go away, the more expensive and time-consuming garbage collection is. This will be felt in periodic freezes of your Java program (the garbage collector taking so long it has to momentarily freeze the program). Modded Minecraft uses **A LOT** of RAM, so garbage collection can be a struggle.
 
-If Adoptium is the "vanilla" JVM, G1GC is the "vanilla" garbage collector. Other notable collectors are Shenandoah and ZGC. You can specify your garbage collector in the extra arguments you provide the JVM. If you don't specify a garbage collector or arguments, the JVM just uses its default with the default settings (usually G1GC). Something else to keep in mind is that not every JVM supports every garbage collector. 
+If Adoptium is the "vanilla" JVM, G1GC is the "vanilla" garbage collector. Other notable collectors are Shenandoah and ZGC. You can specify your garbage collector in the extra arguments you provide the JVM. If you don't specify a garbage collector or arguments, the JVM just uses its default with the default settings (usually G1GC). Something else to keep in mind is that not every JVM supports every garbage collector.
 
 I tested the following arguments:
 
@@ -63,15 +63,15 @@ As well as no arguments.
 
 ## RAM allocations
 
-In most Minecraft launchers, you specify the amount of RAM Minecraft will be able to use while it runs. If you allocate too little, you will run into garbage collector stuttering as it struggles to keep the RAM use low enough. The traditional wisdom has been that if you allocate *too much*, you will get infrequent longer garbage collection pauses as it lets too much RAM use build up and then struggles to clear it out periodically. 
+In most Minecraft launchers, you specify the amount of RAM Minecraft will be able to use while it runs. If you allocate too little, you will run into garbage collector stuttering as it struggles to keep the RAM use low enough. The traditional wisdom has been that if you allocate *too much*, you will get infrequent longer garbage collection pauses as it lets too much RAM use build up and then struggles to clear it out periodically.
 
-The traditional wisdom has also been that it is best practice to set your minimum and maximum RAM use to the same value so that your game does not spend extra effort trying to reduce your RAM use lower than you care about. 
+The traditional wisdom has also been that it is best practice to set your minimum and maximum RAM use to the same value so that your game does not spend extra effort trying to reduce your RAM use lower than you care about.
 
-I tested the too little, too much, and same min/max allocation factors.
+I tested the too little, too much and same min/max allocation factors.
 
 ## Testing
 
-I did all my testing with the All The Mods 8 (ATM8) modpack. It's on Minecraft 1.19.2, and has hundreds of mods. I had to update forge to be able to use Java 21. I created a test world with controlled conditions to benchmark in. As you can see above, there are a lot of different factors test. I tried my best to be methodical and rule out as many factors as possible, while still thouroughly testing the conditions and not making any assumptions about the performance impact any factor will have. You can see a summary of the results below (or the full results [here](https://docs.google.com/spreadsheets/d/1AcuoRrdjbBAZH1bFMhMHovCDvlV-sgnRlx3a2ByIrC8/edit#gid=0)). High FPS is good, low tick duration is good.
+I did all my testing with the All The Mods 8 (ATM8) modpack. It's on Minecraft 1.19.2 and has hundreds of mods. I had to update forge to be able to use Java 21. I created a test world with controlled conditions to benchmark in. As you can see above, there are a lot of different factors to test. I tried my best to be methodical and rule out as many factors as possible, while still thoroughly testing the conditions and not making any assumptions about the performance impact any factor will have. You can see a summary of the results below (or the full results [here](https://docs.google.com/spreadsheets/d/1AcuoRrdjbBAZH1bFMhMHovCDvlV-sgnRlx3a2ByIrC8/edit#gid=0)). High FPS is good, and low tick duration is good.
 
 #### 8 GB allocated tests
 
@@ -147,7 +147,7 @@ As you can see again, Adoptium 17 with no args is superior in this scenario.
 
 ##### A note on generational ZGC:
 
-One of the recent advancements of Java 21 is generational ZGC, which is an enhancement to the ZGC garbage collector. It's supposed to make it more suitable for FPS sensitive tasks like Minecraft. I tried it, ran some tests with it (results [here](https://docs.google.com/spreadsheets/d/18YSNCFHyPzN8kcJ1c5aZNVEnls3r0G3lh7GrIbN5VrI/edit#gid=0)), and basically it doesn't beat Adoptium 17 no args. It's alright, but I don't think it's worth testing any further.
+One of the recent advancements of Java 21 is generational ZGC, which is an enhancement to the ZGC garbage collector. It's supposed to make it more suitable for FPS-sensitive tasks like Minecraft. I tried it, ran some tests with it (results [here](https://docs.google.com/spreadsheets/d/18YSNCFHyPzN8kcJ1c5aZNVEnls3r0G3lh7GrIbN5VrI/edit#gid=0)), and basically it doesn't beat Adoptium 17 no args. It's alright, but I don't think it's worth testing any further.
 
 ## Factors averaged
 
