@@ -4,12 +4,12 @@
         "items": [
             {
                 "title_row": {
-                    "title": "University of California at Berkeley",
+                    "title": "Master of Science, Molecular Science and Software Engineering",
                     "note": "Aug 2024 - May 2026"
                 },
                 "subtitle_rows": [
                     {
-                        "subtitle": "Master of Science, Molecular Science and Software Engineering",
+                        "subtitle": "University of California at Berkeley",
                         "note": "Berkeley, CA"
                     },
                     {
@@ -19,12 +19,12 @@
             },
             {
                 "title_row": {
-                    "title": "Brigham Young University",
+                    "title": "Bachelor of Science, Computer Science",
                     "note": "April 2023"
                 },
                 "subtitle_rows": [
                     {
-                        "subtitle": "Bachelor of Science, Computer Science",
+                        "subtitle": "Brigham Young University",
                         "note": "Provo, UT"
                     },
                     {
