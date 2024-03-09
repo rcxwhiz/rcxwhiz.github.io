@@ -16,7 +16,7 @@
             {% endif %}
         </div>
         {% for row in item.subtitle_rows %}
-            <div class="row justify-content-between">
+            <div class="row justify-content-between align-top">
                 <div class="item-wrapper">
                     {% if row.subtitle | isLink %}
                         <p class="subtitle"><a class="link-secondary" href="{{ row.subtitle }}">{{ row.subtitle }}</a></p>

@@ -4,6 +4,21 @@
         "items": [
             {
                 "title_row": {
+                    "title": "University of California at Berkeley",
+                    "note": "Aug 2024 - May 2026"
+                },
+                "subtitle_rows": [
+                    {
+                        "subtitle": "Master of Science, Molecular Science and Software Engineering",
+                        "note": "Berkeley, CA"
+                    },
+                    {
+                        "subtitle": "Part-time, Remote"
+                    }
+                ]
+            },
+            {
+                "title_row": {
                     "title": "Brigham Young University",
                     "note": "April 2023"
                 },
