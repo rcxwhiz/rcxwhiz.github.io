@@ -30,8 +30,6 @@ module.exports = function(eleventyConfig) {
             result.push([segment, currentPath]);
         }
 
-        result.unshift(['root', '/']);
-
         return result;
     });
     

@@ -2,11 +2,12 @@
 <html lang="en-us" data-bs-theme="light" data-theme-mode="auto">
      {% include "layouts/head.njk" %}
 
-     <body class="position-relative pb-5">
-      {% include "layouts/navbar.njk" %}
+     <body class="position-relative">
+
 
       <main class="site-main">
          <div class="container">
+             {% include "layouts/navbar.njk" %}
             {% block content %}{{ content | safe }}{% endblock %}
          </div>
       </main>
