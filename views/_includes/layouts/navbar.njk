@@ -1,4 +1,6 @@
-<nav class="navbar navbar-expand-md">
+<div class="row justify-content-center">
+    <div class="generic-col">
+        <nav class="navbar navbar-expand-md">
     <div class="navbar-container container-md">
     <a class="navbar-brand user-select-none" href="/">
         <span class="fw-bold text-success fs-6">Josh Bedwell</span>
@@ -9,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-3 ms-md-auto mb-2 mb-md-0">
             <li>
-                <a href="/blog/" title="Blog" class="nav-link hover-success{{ ' active' if page.url.startsWith('/blog/')}}">Blog</a>
+                <a href="{{ '#' if page.url === '/' else '/' }}" title="Home" class="nav-link hover-success{{ ' active text-decoration-underline' if page.url === '/' }}">Home</a>
             </li>
             <li>
-                <a href="/projects/" title="Projects" class="nav-link hover-success{{ ' active' if page.url.startsWith('/projects/')}}">Projects</a>
+                <a href="{{ '#' if page.url === '/blog/' else '/blog/' }}" title="Blog" class="nav-link hover-success{{ ' active text-decoration-underline' if page.url.startsWith('/blog/')}}">Blog</a>
             </li>
             <li>
-                <a href="/resume/" title="Resume" class="nav-link hover-success{{ ' active' if page.url.startsWith('/resume/')}}">Resume</a>
+                <a href="/resume/" title="Resume" class="nav-link hover-success{{ ' active text-decoration-underline' if page.url.startsWith('/resume/')}}">Resume</a>
             </li>
             <li class="d-flex align-items-center">
                 <button id="themeSwitcher" class="nav-link d-flex align-items-center justify-content-left">
@@ -26,33 +28,5 @@
     </div>
     </div>
 </nav>
-
-{#<nav class="navbar navbar-expand bg-body-tertiary rounded" aria-label="Twelfth navbar example">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Centered nav only</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>#}
+    </div>
+</div>
