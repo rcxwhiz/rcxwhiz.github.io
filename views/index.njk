@@ -2,7 +2,7 @@
 title: Home
 pagination:
     data: collections.post
-    size: 5
+    size: 3
     reverse: true
     alias: postlist
 ---
@@ -13,31 +13,34 @@ pagination:
 <div class="row justify-content-center">
     <div class="generic-col">
         <article class="mt-2 mb-3 my-md-3">
-            <header>
-                <h1 class="mb-3">Josh Bedwell</h1>
-            </header>
-            <div class="my-3">
-                <p class="mb-1">Hi, I'm Josh! 🐝</p>
-                <p class="m-0 lh-base">
-                    I recently graduated with a degree in computer science & software engineering. I have a background in academic research as well as developing and deploying various applications. This website has a collection of the things I've worked on with some of the thoughts and discoveries I had along the way.
-                </p>
-            </div>
-            <footer>
-                <div class="row justify-content-left align-items-center my-3 h1">
-                    <a href="https://linkedin.com/in/joshbedwell/" title="LinkedIn" class="col-auto link-success">
+            <header class="row justify-content-left align-items-center">
+                <div class="col-auto">
+                    <h1>Josh Bedwell</h1>
+                </div>
+                <a href="https://linkedin.com/in/joshbedwell/" title="LinkedIn" class="h1 col-auto link-success">
                         <i class="bi bi-linkedin"></i>
                     </a>
-                    <a href="https://github.com/rcxwhiz/" title="GitHub" class="col-auto link-success">
+                    <a href="https://github.com/rcxwhiz/" title="GitHub" class="h1 col-auto link-success">
                         <i class="bi bi-github"></i>
                     </a>
-                </div>
-            </footer>
-            <h3>Recent Posts</h3>
+            </header>
+            <div class="my-3">
+                <p>Hi, I'm Josh! 🐝</p>
+                <p>
+                    In 2023 I graduated with a Bachelor's degree in computer science & software engineering, and in August 2024 I will be starting my Master's in molecular science and software engineering at UC Berkeley. I have an academic background in chemical engineering, computer science, and software engineering.
+                </p>
+                <p>
+                    My published research (linked on my resume) includes combustion simulation software, as well as multiple human-computer interaction studies. I worked on these HCI studies in the BYU STaPL (Social Technology and Privacy Lab), where I also developed prototypes for neurodiverse-friendly social platforms.
+                </p>
+                <p>
+                    This website, beyond just being something to, essentially hosts post-mortems of projects that I thought were interesting, and maybe you will too.
+                </p>
+            </div>
         </article>
+        <h3>Recent Posts</h3>
+        {% for post in postlist %}
+            {% include "layouts/post_preview.njk" %}
+        {% endfor %}
     </div>
 </div>
-{% set include_src_tag = true %}
-{% for post in postlist %}
-    {% include "layouts/post_preview.njk" %}
-{% endfor %}
 {% endblock %}

@@ -14,6 +14,10 @@ module.exports = function(eleventyConfig) {
 		return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
 	});
 
+    eleventyConfig.addFilter('shortDateString', (dateObj) => {
+        return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd MMM yy");
+    });
+
     const urlPattern = new RegExp(/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi);
     eleventyConfig.addFilter('isLink', (linkStr) => {
         return urlPattern.test(linkStr);
@@ -29,8 +33,6 @@ module.exports = function(eleventyConfig) {
             currentPath += `${segment}/`;
             result.push([segment, currentPath]);
         }
-
-        result.unshift(['root', '/']);
 
         return result;
     });

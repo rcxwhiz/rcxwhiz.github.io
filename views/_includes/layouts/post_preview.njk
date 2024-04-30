@@ -1,23 +1,13 @@
-<div class="row justify-content-center mb-gap">
-    <div class="generic-col">
-        <article class="article-card rounded-3 p-3 border border-light-subtle bg-light-subtle">
-            <header class="d-flex flex-column">
-                <h2 class="m-0 fs-4 d-inline text-wrap-balance">
-                    <a class="text-decoration-none text-reset hover-success" href="{{ post.url }}">
-                        {{ post.data.title }}
-                    </a>
-                </h2>
-            </header>
-            <div class="entry-content my-2 fs-6">
-                {% if post.data.excerpt %}
-                    <p>{{ post.data.excerpt | safe }}</p>
-                {% else %}
-                    {{ post.content.slice(0, post.content.indexOf('\n')).slice(0, 100) | safe}}
-                {% endif %}
-            </div>
-            <footer class="entry-meta fw-light d-flex align-items-center flex-wrap">
-                <time datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | readableDate }}</time>{% if include_src_tag %}{% if post in collections.blog_post %}&nbsp;• blog{% endif %}{% if post in collections.project %}&nbsp;• projects{% endif %}{% endif %}
-            </footer>
-        </article>
+<div class="row mb-gap">
+    <div class="col-auto">
+        <small><time datetime="{{ post.data.date | htmlDateString }}">{{ post.data.date | shortDateString }}</time></small>
+    </div>
+    <div class="col-10">
+        <p class="mb-1">
+            <a class="text-decoration-none text-reset hover-success" href="{{ post.url }}">
+                <strong>{{ post.data.title }}</strong>
+            </a>
+        </p>
+        <p>{{ post.data.excerpt }}</p>
     </div>
 </div>

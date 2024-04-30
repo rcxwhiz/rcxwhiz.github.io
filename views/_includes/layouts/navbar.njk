@@ -1,7 +1,9 @@
-<nav class="navbar navbar-expand-md">
+<div class="row justify-content-center">
+    <div class="generic-col">
+        <nav class="navbar navbar-expand-md">
     <div class="navbar-container container-md">
     <a class="navbar-brand user-select-none" href="/">
-        <span class="fw-bold text-success fs-6">JoshBedwell.com</span>
+        <span class="fw-bold text-success fs-6">Josh Bedwell</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -9,13 +11,13 @@
     <div class="collapse navbar-collapse" id="navbarMenu">
         <ul class="navbar-nav ms-3 ms-md-auto mb-2 mb-md-0">
             <li>
-                <a href="/blog/" title="Blog" class="nav-link hover-success{{ ' active' if page.url.startsWith('/blog/')}}">Blog</a>
+                <a href="{{ '#' if page.url === '/' else '/' }}" title="Home" class="nav-link hover-success{{ ' active text-decoration-underline' if page.url === '/' }}">Home</a>
             </li>
             <li>
-                <a href="/projects/" title="Projects" class="nav-link hover-success{{ ' active' if page.url.startsWith('/projects/')}}">Projects</a>
+                <a href="{{ '#' if page.url === '/blog/' else '/blog/' }}" title="Blog" class="nav-link hover-success{{ ' active text-decoration-underline' if page.url.startsWith('/blog/')}}">Blog</a>
             </li>
             <li>
-                <a href="/resume/" title="Resume" class="nav-link hover-success{{ ' active' if page.url.startsWith('/resume/')}}">Resume</a>
+                <a href="/resume/" title="Resume" class="nav-link hover-success{{ ' active text-decoration-underline' if page.url.startsWith('/resume/')}}">Resume</a>
             </li>
             <li class="d-flex align-items-center">
                 <button id="themeSwitcher" class="nav-link d-flex align-items-center justify-content-left">
@@ -26,3 +28,5 @@
     </div>
     </div>
 </nav>
+    </div>
+</div>
