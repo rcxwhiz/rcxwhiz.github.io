@@ -5,8 +5,6 @@
 
 # eleventy generated site
 _site/
-dev/
-public/
 
 # IntelliJ project files
 .idea
