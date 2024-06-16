@@ -16,7 +16,7 @@ GitHub pages settings for a repository can be found in `Settings` -> `Pages`. Th
 
 ## Triggering and running the script
 
-```
+```yml
 name: Build and Deploy
 
 on:
@@ -25,7 +25,7 @@ on:
 ```
 If you've never used GitHub Actions before, this means that this script will be triggered whenever there is a commit pushed to the `main` branch, which includes things like pull requests being merged. It makes sense that we only want the site to be redeployed when there are pushes to `main` because that is essentially our release or deploy branch.
 
-```
+```yml
 jobs:
   build:
     ...
@@ -36,7 +36,7 @@ jobs:
 ```
 This means that there are two jobs within this "workflow", and the second one needs the first to finish before it can start. They will run in parallel if you don't specify this.
 
-```
+```yml
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -49,7 +49,7 @@ This means that our `build` job is going to run on Ubuntu, and it is going to ch
 
 ## Building the site
 
-```
+```yml
 - name: Build Eleventy
   uses: TartanLlama/actions-eleventy@v1.3
   with:
@@ -57,7 +57,7 @@ This means that our `build` job is going to run on Ubuntu, and it is going to ch
 ```
 In this step I am using somebody else's Action to build my Eleventy site. I certainly don't have to do this since it's pretty simple to do this manually. I could have written:
 
-```
+```yml
 - name: Setup Node.js
   uses: actions/setup-node@v4
 
@@ -74,7 +74,7 @@ If you are using a different static site generator (Next.js, Jekyll, Astro, etc.
 
 Now that our `build` job has built the site, it's time to upload the files for our site into a GitHub artifact. Artifacts are the way to pass files between jobs. We can easily do this with:
 
-```
+```yml
 - name: Upload artifact
   uses: actions/upload-pages-artifact@v3
   with:
@@ -89,7 +89,7 @@ You should be able to see and download the artifact produced by this workflow if
 
 Now all we need to do is tell GitHub to use that artifact as the files for our site. We can easily do this in the deploy job with:
 
-```
+```yml
 jobs:
   deploy:
     needs: build
