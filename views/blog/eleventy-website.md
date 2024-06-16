@@ -5,6 +5,9 @@ date: 2024-01-25
 updated: 2024-01-30
 repo: https://github.com/rcxwhiz/rcxwhiz.github.io
 excerpt: This is what I'm using to write/host this website! What an appropriate first project to write about. I used eleventy & GitHub pages to replace my manual static site generation + Nginx.
+eleventyNavigation:
+    key: eleventy-website
+    parent: blog
 ---
 
 This is what I'm using to write/host this website! What an appropriate first project to write about.

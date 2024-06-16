@@ -1,8 +1,12 @@
 const { DateTime } = require("luxon");
 const sass = require("sass");
 const path = require("node:path");
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
+    // Plugins
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+
     // Filters
 	eleventyConfig.addFilter("readableDate", (dateObj, format, zone) => {
 		// Formatting tokens for Luxon: https://moment.github.io/luxon/#/formatting?id=table-of-tokens
