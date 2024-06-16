@@ -1,6 +1,6 @@
 const { DateTime } = require("luxon");
-// const sass = require("sass");
-// const path = require("node:path");
+const sass = require("sass");
+const path = require("node:path");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
@@ -41,12 +41,6 @@ module.exports = function (eleventyConfig) {
 
     });
 
-    // Add a filter using the Config API
-    eleventyConfig.addWatchTarget("./src/scss/");
-    eleventyConfig.setBrowserSyncConfig({
-        reloadDelay: 400
-    });
-
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(syntaxHighlight);
@@ -71,47 +65,36 @@ module.exports = function (eleventyConfig) {
         return urlPattern.test(linkStr);
     });
 
-    // eleventyConfig.addFilter('breadcrumbs', (linkStr) => {
-    //     const segments = linkStr.split('/').filter(segment => segment !== '');
-
-    //     let currentPath = '/';
-    //     const result = [];
-
-    //     for (const segment of segments) {
-    //         currentPath += `${segment}/`;
-    //         result.push([segment, currentPath]);
-    //     }
-
-    //     return result;
-    // });
-
-    // UNKNOWN if this is still necessary
     // copy public files
-    eleventyConfig.addPassthroughCopy("public");
+    eleventyConfig.addPassthroughCopy("src/public");
 
-    // // .scss processing
-    // eleventyConfig.addTemplateFormats("scss");
-    // eleventyConfig.addExtension("scss", {
-    //     outputFileExtension: "css",
-    //     compile: function (inputContent, inputPath) {
-    //         let parsed = path.parse(inputPath);
-    //         let result = sass.compileString(inputContent, {
-    //             loadPaths: [
-    //                 parsed.dir || ".",
-    //                 this.config.dir.includes
-    //             ],
-    //             style: "compressed"
-    //         });
-    //         return (data) => {
-    //             return result.css;
-    //         }
-    //     }
-    // });
+    // .scss processing
+    eleventyConfig.addTemplateFormats("scss");
+    eleventyConfig.addExtension("scss", {
+        outputFileExtension: "css",
+        compile: function (inputContent, inputPath) {
+            let parsed = path.parse(inputPath);
+            if (parsed.name.startsWith("_")) {
+                return (data) => {
+                    return inputContent;
+                }
+            }
+            let result = sass.compileString(inputContent, {
+                loadPaths: [
+                    parsed.dir || ".",
+                    this.config.dir.includes
+                ],
+                style: "compressed"
+            });
+            return (data) => {
+                return result.css;
+            }
+        }
+    });
 
     return {
         dir: {
-            input: "src",
-            output: "dev"
+            input: "src"
         }
     }
 };
