@@ -3,6 +3,9 @@ tags: []
 title: Old GitHub Highlights
 date: 2024-02-10
 excerpt: I've been needing to clean out some old repos on my GitHub account. I have done a clean-out once before, but that was a while ago and now I'm up to 55 repos, so I thought I would do a highlight reel of some of the odd/hyper-specific ones.
+eleventyNavigation:
+    key: old-repos
+    parent: blog
 ---
 
 I've been needing to clean out some old repos on my [GitHub account](https://github.com/rcxwhiz/). I have done a clean-out once before, but that was a while ago and now I'm up to 55 repos, so I thought I would do a highlight reel of some of the odd/hyper-specific ones. Some of the links to these repos might break since a lot of them just need to be cleaned out.

@@ -3,6 +3,9 @@ tags: ["Python", "Django", "Rust", "React"]
 title: Reviving My Reddit Clone
 date: 2024-03-28
 excerpt: I am thinking of reviving my old Reddit clone called Marceline. This would involve actually writing the React frontend this time, and refreshing the Django backend (while trying to stay focused and not rewrite it in Rust).
+eleventyNavigation:
+    key: revive-marceline
+    parent: blog
 ---
 
 A while ago I wrote the backend for a Reddit clone called Marceline. That code is [here](https://github.com/Marceline-Live/Marceline-API). I originally wrote this Django backend and then lost steam when it came time to make the frontend. I was prompted to make this project when Elon bought Twitter and ruined it as well as when Reddit closed their third-party API and screwed Apollo, and I had the classic thought: "How hard could it really be?"

@@ -3,6 +3,9 @@ tags: ["Java", "Minecraft", "JVM"]
 title: Modded Minecraft JVM Optimization
 date: 2024-02-07
 excerpt: I explored and empirically determined the best modded Minecraft JVM settings through hours of sound testing. The results are simpler than you would think.
+eleventyNavigation:
+    key: modded-mc-jvm
+    parent: blog
 ---
 
 Any modded Minecraft enthusiast knows the struggle of getting the game to run well. When you stick together hundreds of community-written mods into Minecraft (a somewhat poorly optimized game to begin with), you end up with a RAM-hungry beast that is difficult to feed and control. There has been a long history of specifically tunned JVM arguments, RAM allocations, and obscure JREs to get the most out of your Minecraft and modded Minecraft performance.

@@ -3,6 +3,9 @@ tags: ["eleventy", "GitHub Actions", "GitHub Pages"]
 title: GitHub Pages + Actions Deployment
 date: 2024-02-06
 excerpt: I just wanted to come out and explain in simple terms how to deploy a GitHub Pages site using whatever static site generator you want. I am using Eleventy for this website (and this example). The complete GitHub Actions script can be found here. I'll go through the script step by step here.
+eleventyNavigation:
+    key: gh-pages-actions
+    parent: blog
 ---
 
 I just wanted to come out and explain in simple terms how to deploy a GitHub Pages site using whatever static site generator you want. This post assumes you already have a GitHub Pages repository and a static site generator such as Eleventy, Next.js, Astro, etc. I am using [Eleventy](https://11ty.dev) for this website (and this example). The complete GitHub Actions script can be found [here](https://github.com/rcxwhiz/rcxwhiz.github.io/blob/main/.github/workflows/main.yml). I'll go through the script step by step here.
