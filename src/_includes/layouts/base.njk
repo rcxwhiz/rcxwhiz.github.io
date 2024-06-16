@@ -1,0 +1,16 @@
+<!doctype html>
+<html lang="en-us" data-bs-theme="light" data-theme-mode="auto">
+     {% include "snippets/head.njk" %}
+
+     <body class="position-relative">
+
+      <main class="site-main">
+         <div class="container">
+             {% include "snippets/navbar.njk" %}
+            {% block content %}{{ content | safe }}{% endblock %}
+         </div>
+      </main>
+
+      {% include "snippets/footer.njk" %}
+     </body>
+</html>

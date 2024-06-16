@@ -1,0 +1,48 @@
+---
+title: Home
+pagination:
+    data: collections.post
+    size: 3
+    reverse: true
+    alias: postlist
+eleventyNavigation:
+    key: home
+---
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="generic-col">
+        <article class="mt-2 mb-3 my-md-3">
+            <header class="row justify-content-left align-items-center">
+                <div class="col-auto">
+                    <h1>Josh Bedwell</h1>
+                </div>
+                <a href="https://linkedin.com/in/joshbedwell/" title="LinkedIn" class="h1 col-auto link-success">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/rcxwhiz/" title="GitHub" class="h1 col-auto link-success">
+                        <i class="bi bi-github"></i>
+                    </a>
+            </header>
+            <div class="my-3">
+                <p>Hi, I'm Josh! 🐝</p>
+                <p>
+                    In 2023 I graduated with a Bachelor's degree in computer science & software engineering, and in August 2024 I will be starting my Master's in molecular science and software engineering at UC Berkeley. I have an academic background in chemical engineering, computer science, and software engineering.
+                </p>
+                <p>
+                    My published research (linked on my resume) includes combustion simulation software, as well as multiple human-computer interaction studies. I worked on these HCI studies in the BYU STaPL (Social Technology and Privacy Lab), where I also developed prototypes for neurodiverse-friendly social platforms.
+                </p>
+                <p>
+                    This website, beyond just being something to, essentially hosts post-mortems of projects that I thought were interesting, and maybe you will too.
+                </p>
+            </div>
+        </article>
+        <h3>Recent Posts</h3>
+        {% for post in postlist %}
+            {% include "snippets/post_preview.njk" %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

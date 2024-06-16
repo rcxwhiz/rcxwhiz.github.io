@@ -1,8 +1,12 @@
 ### Example user template template
 ### Example user template
 
+.DS_Store
+
 # eleventy generated site
 _site/
+dev/
+public/
 
 # IntelliJ project files
 .idea

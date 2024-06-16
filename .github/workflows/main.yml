@@ -12,15 +12,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Eleventy
-        uses: TartanLlama/actions-eleventy@v1.3
-        with:
-          install_dependencies: true
+      - name: Setup Node
+        uses: actions/setup-node@v4
+
+      - name: Build Site
+        run: npm run build
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site/
+          name: github-pages
+          path: public/
 
   deploy:
     needs: build

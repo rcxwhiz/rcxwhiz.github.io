@@ -1,0 +1,29 @@
+---
+title: Resume
+eleventyNavigation:
+    key: resume
+    parent: home
+---
+
+<!doctype html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="{{ '/css/theme.css' | url }}">
+
+        <title>{{ title }}</title>
+    </head>
+
+    <body>
+        <main class="resume">
+            <div class="container-sm resume-container">
+                {% include "snippets/resume/header.njk" %}
+                {% for section in resume_sections %}
+                    {% include "snippets/resume/section.njk" %}
+                {% endfor %}
+            </div>
+        </main>
+    </body>
+</html>
