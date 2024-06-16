@@ -6,40 +6,40 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 
 module.exports = function (eleventyConfig) {
-    // Tags
-    function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "nav"].indexOf(tag) === -1);
-    }  // ?
-    eleventyConfig.setDataDeepMerge(true);
+    // // Tags
+    // function filterTagList(tags) {
+    //     return (tags || []).filter(tag => ["all", "nav"].indexOf(tag) === -1);
+    // }  // ?
+    // eleventyConfig.setDataDeepMerge(true);
 
-    function filterTagList(tags) {
-        return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
-    }
+    // function filterTagList(tags) {
+    //     return (tags || []).filter(tag => ["all", "nav", "post", "posts"].indexOf(tag) === -1);
+    // }
 
-    eleventyConfig.addFilter("filterTagList", filterTagList)
+    // eleventyConfig.addFilter("filterTagList", filterTagList)
 
-    eleventyConfig.addCollection("tagList", collection => {
-        const tagsObject = {}
-        collection.getAll().forEach(item => {
-            if (!item.data.tags) return;
-            item.data.tags
-                .filter(tag => !['post', 'all'].includes(tag))
-                .forEach(tag => {
-                    if (typeof tagsObject[tag] === 'undefined') {
-                        tagsObject[tag] = 1
-                    } else {
-                        tagsObject[tag] += 1
-                    }
-                });
-        });
+    // eleventyConfig.addCollection("tagList", collection => {
+    //     const tagsObject = {}
+    //     collection.getAll().forEach(item => {
+    //         if (!item.data.tags) return;
+    //         item.data.tags
+    //             .filter(tag => !['post', 'all'].includes(tag))
+    //             .forEach(tag => {
+    //                 if (typeof tagsObject[tag] === 'undefined') {
+    //                     tagsObject[tag] = 1
+    //                 } else {
+    //                     tagsObject[tag] += 1
+    //                 }
+    //             });
+    //     });
 
-        const tagList = []
-        Object.keys(tagsObject).forEach(tag => {
-            tagList.push({ tagName: tag, tagCount: tagsObject[tag] })
-        })
-        return tagList.sort((a, b) => b.tagCount - a.tagCount)
+    //     const tagList = []
+    //     Object.keys(tagsObject).forEach(tag => {
+    //         tagList.push({ tagName: tag, tagCount: tagsObject[tag] })
+    //     })
+    //     return tagList.sort((a, b) => b.tagCount - a.tagCount)
 
-    });
+    // });
 
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
@@ -74,11 +74,6 @@ module.exports = function (eleventyConfig) {
         outputFileExtension: "css",
         compile: function (inputContent, inputPath) {
             let parsed = path.parse(inputPath);
-            if (parsed.name.startsWith("_")) {
-                return (data) => {
-                    return inputContent;
-                }
-            }
             let result = sass.compileString(inputContent, {
                 loadPaths: [
                     parsed.dir || ".",
@@ -92,6 +87,10 @@ module.exports = function (eleventyConfig) {
         }
     });
 
+    // ignore underscored scss files
+    eleventyConfig.ignores.add("**/_*.scss");
+
+    // output dir
     return {
         dir: {
             input: "src"
