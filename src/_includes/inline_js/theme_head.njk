@@ -1,6 +1,8 @@
 <script>
     const themeKey = 'theme-mode'
     let themeIndicator = null
+    const lightCodeCss = document.getElementById("light-code-css")
+    const darkCodeCss = document.getElementById("dark-code-css")
 
     // getters, setters, initializers
     const getThemeMode = () => localStorage.getItem(themeKey)
@@ -25,6 +27,13 @@
     const refreshPageTheme = () => {
         const theme = getTheme()
         document.documentElement.setAttribute('data-bs-theme', theme)
+        if (theme === 'dark') {
+            darkCodeCss.disabled = false
+            lightCodeCss.disabled = true
+        } else {
+            lightCodeCss.disabled = false
+            darkCodeCss.disabled = true
+        }
     }
     // refresh indicator
     const refreshThemeIndicator = () => {
