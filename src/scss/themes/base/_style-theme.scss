@@ -210,10 +210,10 @@
 }
 
 .post-content pre {
-    @extend .py-2;
-    @extend .px-3;
-    @extend .bg-body-secondary;
-    @extend .rounded-3;
+    @extend .px-4;
+    @extend .py-3;
+    @extend .border;
+    @extend .border-2;
 }
 
 .post-content table {
