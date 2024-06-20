@@ -13,7 +13,7 @@ layout: layouts/base.njk
 
 # My Minecraft Server
 
-I have a Minecraft server which is using a modified version of [ATM9 no frills](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9-no-frills). You can check the status of the server [here](https://mcsrvstat.us/server/playmc.joshbedwell.com). Here are the steps to join the server:
+I have a Minecraft server which is using a modified version of [ATM9 no frills](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9-no-frills). You can check the status of the server [here](https://mcsrvstat.us/server/playmc.joshbedwell.com). To play you will need to give me your username so I can add you to the whitelist. Here are the steps to join the server:
 
 ## 1. Download Java
 
@@ -35,7 +35,7 @@ This tab is also where you would change the amount of RAM allocated to your inst
 
 ## 5. Launch the game
 
-At this point you should be able to launch the game, with the server address (playmc.joshbedwell.com) included in the instance. 
+At this point you should be able to launch the game, with the server address (playmc.joshbedwell.com) included in the instance. There should be two server entries - one of them saying `(Backup)`. If you are on my local network you should be able to use the non-backup one, which technically might be faster. You should be consistent with whichever one you choose, because your map data and so on will count them as different servers. 
 
 ## 6. Change settings
 
