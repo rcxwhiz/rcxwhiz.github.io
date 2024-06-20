@@ -25,7 +25,7 @@ Download the Prism Minecraft launcher from [here](https://prismlauncher.org/down
 
 ## 3. Download the modpack
 
-On the prism launcher click `Add Instance` in the top left, then `Import`. Type the following address into the box labeled `Local file or link to a direct download:` [http://server.joshbedwell.com/atm9server.zip](), then hit `OK`. Downloading and extracting the pack might take a few minutes. 
+On the prism launcher click `Add Instance` in the top left, then `Import`. Type the following address into the box labeled `Local file or link to a direct download:` [http://server.joshbedwell.com/atm9server.zip](http://server.joshbedwell.com/atm9server.zip), then hit `OK`. Downloading and extracting the pack might take a few minutes. 
 
 ## 4. Select the right Java version
 
