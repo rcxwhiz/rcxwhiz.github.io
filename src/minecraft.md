@@ -8,9 +8,11 @@ layout: layouts/base.njk
 
 {% block content %}
 
-# My Minecraft Server
+# My Modded Minecraft Server
 
-I have a Minecraft server which is using a modified version of ATM9 no frills. You can check the status of the server [here](https://mcsrvstat.us/server/playmc.joshbedwell.com). To play you will need to give me your username so I can add you to the whitelist. Here are the steps to join the server:
+<p class="lead">
+    I have a Minecraft server which is using a tweaked version of ATM9 no frills. You can check the status of the server <a href="ttps://mcsrvstat.us/server/playmc.joshbedwell.com">here</a>. To play you will need to give me your username so I can add you to the whitelist. Here are the steps to join the server:
+</p>
 
 ## 1. Download Java
 
@@ -22,13 +24,19 @@ Download the Prism Minecraft launcher from [here](https://prismlauncher.org/down
 
 ## 3. Download the modpack
 
-On the prism launcher click `Add Instance` in the top left, then `Import`. Type the following address into the box labeled `Local file or link to a direct download`: [http://server.joshbedwell.com/atm9server.zip](http://server.joshbedwell.com/atm9server.zip), then hit `OK`. Downloading and extracting the pack might take a few minutes. 
+On the prism launcher click `Add Instance` in the top left, then `Import`. Type the following address into the box labeled `Local file or link to a direct download`: [http://server.joshbedwell.com/atm9server.zip](http://server.joshbedwell.com/atm9server.zip), then hit `OK`. Downloading and extracting the pack might take a few minutes.
+
+<div class="bd-callout-info bd-callout">
+    You don't have to download the .zip file to your computer, you can just copy this link into the Prism popup.
+</div>
 
 ## 4. Select the right Java version
 
 Select the new instance, then hit `Edit`. Open the `Settings` tab on the left, and in the `Java installation` section click `Auto-detect...`. The Adoptium Temurin 17 Java you installed earlier should appear on that list - select it.
 
-This tab is also where you would change the amount of RAM allocated to your instance. By default it is set to 4-8GB. **IF YOU ONLY HAVE 8GB RAM IN YOUR COMPUTER, CHANGE THIS TO 4-6GB BY EDITING THE** `Maximum memory allocation` **BOX TO** `6144 MiB`.
+<div class="bd-callout-warning bd-callout">
+    If you only have 8 GB of RAM you will want to decrease your allocated RAM on this page. Edit the <code>Maximum memory allocation</code> field to <code>6144 MiB</code>.
+</div>
 
 ## 5. Launch the game
 
