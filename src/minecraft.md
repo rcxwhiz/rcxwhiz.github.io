@@ -10,7 +10,7 @@ layout: layouts/base.njk
 
 # My Minecraft Server
 
-I have a Minecraft server which is using a modified version of [ATM9 no frills](https://www.curseforge.com/minecraft/modpacks/all-the-mods-9-no-frills). You can check the status of the server [here](https://mcsrvstat.us/server/playmc.joshbedwell.com). To play you will need to give me your username so I can add you to the whitelist. Here are the steps to join the server:
+I have a Minecraft server which is using a modified version of ATM9 no frills. You can check the status of the server [here](https://mcsrvstat.us/server/playmc.joshbedwell.com). To play you will need to give me your username so I can add you to the whitelist. Here are the steps to join the server:
 
 ## 1. Download Java
 
