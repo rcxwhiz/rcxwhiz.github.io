@@ -106,14 +106,17 @@
             {
                 "title_row": {
                     "title": "\"I Know I’m Being Observed:\" Video Interventions to Educate Users about Targeted Advertising on Facebook.",
-                    "note": "2024"
+                    "note": "May 2024"
                 },
                 "subtitle_rows": [
                     {
-                        "subtitle": "ACM CHI 2024"
+                        "subtitle": "Smith, Garrett, et al."
                     },
                     {
-                        "subtitle": "Full citation pending"
+                        "subtitle": "Proceedings of the 2024 CHI Conference on Human Factors in Computing, article 112"
+                    },
+                    {
+                        "subtitle": "https://doi.org/10.1145/3613904.3642885"
                     }
                 ]
             },
