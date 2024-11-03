@@ -12,10 +12,18 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Eleventy
-        uses: TartanLlama/actions-eleventy@v1.3
+      - name: Install node
+        uses: actions/setup-node@v4
         with:
-          install_dependencies: true
+          node-version: 22
+
+      - name: Install eleventy
+        run: |
+          npm install @11ty/eleventy --save-dev
+
+      - name: Build site
+        run: |
+          npx @11ty/eleventy --input=. --output=_site
 
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v3
