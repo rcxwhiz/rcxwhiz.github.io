@@ -1,0 +1,139 @@
+[
+    {
+        "section": "Education",
+        "items": [
+            [
+                {
+                    "row": [
+                        "<strong>University of California at Berkeley</strong>",
+                        "<em>Expected May 2025</em>"
+                    ]
+                },
+                {
+                    "row": [
+                        "M.S. in Molecular Science and Software Engineering",
+                        "Berkeley, CA"
+                    ]
+                }
+            ],
+            [
+                {
+                    "row": [
+                        "<strong>Brigham Young University</strong>",
+                        "<em>Apr 2023</em>"
+                    ]
+                },
+                {
+                    "row": [
+                        "B.S. in Computer Science, emphasis in Software Engineering",
+                        "Provo, UT"
+                    ]
+                }
+            ]
+        ]
+    },
+    {
+        "section": "Experience",
+        "items": [
+            [
+                {
+                    "row": [
+                        "<strong>Research Assistant</strong>, Brigham Young University - Provo, UT",
+                        "Jan 2021 - May 2023"
+                    ]
+                },
+                {
+                    "list": [
+                        "Co-author of papers in chemical engineering and human-computer interaction labs",
+                        "Refactored, modularized, and tested a new combustion simulation library, enabling publication",
+                        "Performed data analysis, including natural language processing, for publications focused on cross cultural interactions and user privacy behavior",
+                        "Led prototyping and development of neurodiverse friendly social platform features",
+                        "Designed and deployed a lab website, displaying team members and projects for an extensive lab"
+                    ]
+                }
+            ],
+            [
+                {
+                    "row": [
+                        "<strong>Academic Tutor</strong>, Utah Valley University - Orem, UT",
+                        "Jan 2022 - May 2022"
+                    ]
+                },
+                {
+                    "list": [
+                        "Provided individual academic support for undergraduate computer science courses"
+                    ]
+                }
+            ],
+            [
+                {
+                    "row": [
+                        "<strong>Teaching Assistant</strong>, Brigham Young University - Provo, UT",
+                        "Aug 2019 - Apr 2021"
+                    ]
+                },
+                {
+                    "list": [
+                        "Provided lab and tutorial sessions for chemical engineering scientific programming course",
+                        "Provided individual academic support in computer science courses including Intro to Programming, Algorithms and Data Structures, and Discrete Structures"
+                    ]
+                }
+            ]
+        ]
+    },
+    {
+        "section": "Publications",
+        "items": [
+            [
+                {
+                    "text": "Garret, Smith, <strong>Bedwell, Joshua</strong>, et al. 'I know I'm being observed:\" Video Interventions to Education Users about Targeted Advertising on Facebook'. <em>Proceedings of the 2024 CHI Conference on Human Factors in Computing Systems</em>, Assosciation for computing Machinery, 2024, <a href=\"https://doi.org/10.1145/3613904.3642885\">https://doi.org/10.1145/3613904.3642885</a>. CHI '24."
+                }
+            ],
+            [
+                {
+                    "text": "Mondal, Mainack, <strong>Bedwell, Joshua</strong>, et al. 'A Tale of Two Cultures: Comparing Interpersonal Information Disclosure Norms on Twitter'. <em>Proc. ACM Hum. -Comput. Interact</em>., vol. 7, no. CSCW2, Association for Computing Machinery, Oct. 2023, <a href=\"https://doi.org/10.1145/3610045\">https://doi.org/10.1145/3610045</a>."
+                }
+            ],
+            [
+                {
+                    "text": "Stephens, Victoria B., <strong>Bedwell, Joshua</strong>, et al. 'SootLib: A Soot Model Library for Combustion Simulation'. <em>SoftwareX</em>, vol. 22, Elsevier, May 2023, <a href=\"https://doi.org/10.1016/j.softx.2023.101375.\">https://doi.org/10.1016/j.softx.2023.101375.</a>."
+                }
+            ]
+        ]
+    },
+    {
+        "section": "Projects",
+        "items": [
+            [
+                {
+                    "text": "<strong>Capstone Project - Partners Personnel</strong>"
+                },
+                {
+                    "list": [
+                        "Architected new web-based ETL application to succeed aging MS Access program",
+                        "Integrated authentication with existing Azure AD solution",
+                        "Designed node-based pipeline architecture, enabling unit testing, serialization, and meeting per-client needs",
+                        "Integrated administrative documentation including dynamically generated content",
+                        "Deployed via Django with simple and robust client front end"
+                    ]
+                }
+            ]
+        ]
+    },
+    {
+        "section": "Skills",
+        "items": [
+            [
+                {
+                    "text": "<strong>Languages:</strong> Python (Django), C, C++, Java, Swift (SwiftUI), Rust, Javascript"
+                },
+                {
+                    "text": "<strong>Services:</strong> AWS (DynamoDB, API Gateway, Lambda), GitHub Actions CI/CD"
+                },
+                {
+                    "text": "<strong>Technical Methodologies:</strong> Agile Development (Scrum), Scientific Computing, Data Analysis"
+                }
+            ]
+        ]
+    }
+]

@@ -8,12 +8,12 @@
   "author": "Josh Bedwell",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy": "^3.0.0",
     "bootstrap": "5.3.3"
   },
   "devDependencies": {
     "@11ty/eleventy-navigation": "^0.3.5",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
-    "sass": "^1.77.5"
+    "sass": "^1.80.6"
   }
 }

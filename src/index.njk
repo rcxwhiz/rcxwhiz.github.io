@@ -1,44 +1,43 @@
 ---
 title: Home
-pagination:
-    data: collections.post
-    size: 3
-    reverse: true
-    alias: postlist
-eleventyNavigation:
-    key: home
 ---
 
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-<article class="mt-2 mb-3 my-md-3">
+  <article class="mt-2 mb-3 my-md-3">
     <header class="row justify-content-left align-items-center">
-        <div class="col-auto">
-            <h1>Josh Bedwell</h1>
-        </div>
-        <a href="https://linkedin.com/in/joshbedwell/" title="LinkedIn" class="h1 col-auto link-success">
-                <i class="bi bi-linkedin"></i>
-            </a>
-            <a href="https://github.com/rcxwhiz/" title="GitHub" class="h1 col-auto link-success">
-                <i class="bi bi-github"></i>
-            </a>
+      <div class="col-auto">
+        <h1>Josh Bedwell</h1>
+      </div>
+      <a href="https://linkedin.com/in/joshbedwell/" title="LinkedIn" class="h1 col-auto link-success">
+        <i class="bi bi-linkedin"></i>
+      </a>
+      <a href="https://github.com/rcxwhiz/" title="GitHub" class="h1 col-auto link-success">
+        <i class="bi bi-github"></i>
+      </a>
     </header>
     <div class="my-3">
-        <p>Hi, I'm Josh! 🐝</p>
-        <p>
-            In 2023 I graduated with a Bachelor's degree in computer science & software engineering, and in August 2024 I will be starting my Master's in molecular science and software engineering at UC Berkeley. I have an academic background in chemical engineering, computer science, and software engineering.
-        </p>
-        <p>
-            My published research (linked on my resume) includes combustion simulation software, as well as multiple human-computer interaction studies. I worked on these HCI studies in the BYU STaPL (Social Technology and Privacy Lab), where I also developed prototypes for neurodiverse-friendly social platforms.
-        </p>
-        <p>
-            This website, beyond just being something to, essentially hosts post-mortems of projects that I thought were interesting, and maybe you will too.
-        </p>
+      <p>Hi, I'm Josh! 🐝</p>
+      <p>
+        In 2023 I graduated with a Bachelor's degree in Computer Science & Software Engineering. In May 2025 I will graduate with my Master's degree in Molecular Science and Software Engineering at UC Berkeley. I have an academic background in chemical engineering, computer science, and software engineering.
+      </p>
+      <p>
+        My published research includes combustion simulation software, as well as human-computer interaction studies. I did the simulation paper with the BYU Chemical Engineering Department, and the HCI papers with the BYU Social Technology and Privacy Lab. I also worked on other projects in the STaPL including prototypes for neurodiverse inclusive social platform features. 
+      </p>
+      <p>
+        At BYU I worked on a capstone project with a company creating a new, web-based app for processing payroll files. I designed a node-based pipeline system which was capable of handling the different needs of different clients. Integrating this app and deploying it was very rewarding.
+      </p>
     </div>
-</article>
-<h3>Recent Posts</h3>
-{% for post in postlist %}
-    {% include "snippets/post_preview.njk" %}
-{% endfor %}
+  </article>
+  <article class="mt-2">
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <a class="btn btn-success" role="button" href="public/resume.pdf" download="Josh Bedwell Resume.pdf">Download Resume
+        <i class="bi bi-file-earmark-arrow-down"></i>
+      </a>
+      </div>
+    </div>
+    {% include "layouts/resume_items.njk" %}
+  </article>
 {% endblock %}
