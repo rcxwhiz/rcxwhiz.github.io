@@ -11,7 +11,7 @@
                 },
                 {
                     "row": [
-                        "M.S. in Molecular Science and Software Engineering",
+                        "M.S. in Molecular Science and Software Engineering | GPA: 4.0",
                         "Berkeley, CA"
                     ]
                 }
@@ -38,14 +38,12 @@
             [
                 {
                     "row": [
-                        "<strong>Research Assistant</strong>, Brigham Young University - Provo, UT",
-                        "Jan 2021 - May 2023"
+                        "<strong>Research Assistant</strong>, Social Technology and Privacy Lab - Provo, UT",
+                        "May 2021 - May 2023"
                     ]
                 },
                 {
                     "list": [
-                        "Co-author of papers in chemical engineering and human-computer interaction labs",
-                        "Refactored, modularized, and tested a new combustion simulation library, enabling publication",
                         "Performed data analysis, including natural language processing, for publications focused on cross cultural interactions and user privacy behavior",
                         "Led prototyping and development of neurodiverse friendly social platform features",
                         "Designed and deployed a lab website, displaying team members and projects for an extensive lab"
@@ -68,7 +66,20 @@
             [
                 {
                     "row": [
-                        "<strong>Teaching Assistant</strong>, Brigham Young University - Provo, UT",
+                        "<strong>Research Assistant</strong>, BYU Chemical Engineering - Provo, UT",
+                        "Jan 2021 - Aug 2021"
+                    ]
+                },
+                {
+                    "list": [
+                        "Refactored, modularized, and tested a new combustion simulation library, enabling publication"
+                    ]
+                }
+            ],
+            [
+                {
+                    "row": [
+                        "<strong>Teaching Assistant</strong>, BYU Chemical Engineering & Computer Science - Provo, UT",
                         "Jan 2019 - Apr 2021"
                     ]
                 },
@@ -106,15 +117,47 @@
         "items": [
             [
                 {
-                    "text": "<strong>Capstone Project - Partners Personnel</strong>"
+                    "text": "<strong>Transition Biomining - Predictive generation of qPCR primers (2025)</strong>"
                 },
                 {
                     "list": [
-                        "Architected new web-based ETL application to succeed aging MS Access program",
-                        "Integrated authentication with existing Azure AD solution",
+                        "Developing AI model to find the best primer set for qPCR of environmental microbial community",
+                        "Leveraging model for successful critical mineral extraction"
+                    ]
+                }
+            ],
+            [
+                {
+                    "text": "<strong>University of British Columbia - Fast phylogenetic mapping of functional anchor genes (2025)</strong>"
+                },
+                {
+                    "list": [
+                        "Extending TreeSAPP phylogenetic profiling library with reference packages for several biogeochemical processes",
+                        "Developing scripts to efficiently parse TreeSAPP outputs and link disparate feature information across databases"
+                    ]
+                }
+            ],
+            [
+                {
+                    "text": "<strong>Multimodal Brain Tumor Segmentation Challenge 3D CNN (2024)</strong>"
+                },
+                {
+                    "list": [
+                        "Designed 3D convolutional neural networks to predict volumes of different tumor types in 3D MRI images",
+                        "Created dynamic analysis tools to reduce input size by over 70% while maintaining >95% input detail",
+                        "Designed, trained, and validated models with 7M - 117M params, achieved <em>r^2 = 0.53</em> with exploratory model"
+                    ]
+                }
+            ],
+            [
+                {
+                    "text": "<strong>Partners Personnel - Django Deployment (2022-2023)</strong>"
+                },
+                {
+                    "list": [
                         "Designed node-based pipeline architecture, enabling unit testing, serialization, and meeting per-client needs",
-                        "Integrated administrative documentation including dynamically generated content",
-                        "Deployed via Django with simple and robust client front end"
+                        "Implemented dynamic documentation generation and integration",
+                        "Deployed with robust client front end and Azure AD integration"
                     ]
                 }
             ]
@@ -125,13 +168,16 @@
         "items": [
             [
                 {
-                    "text": "<strong>Languages:</strong> Python (Django), C, C++, Java, Swift (SwiftUI), Rust, Javascript"
+                    "text": "<strong>Languages:</strong> Python, C, C++, Java, Swift, Rust, Javascript"
                 },
                 {
                     "text": "<strong>Services:</strong> AWS (DynamoDB, API Gateway, Lambda), GitHub Actions CI/CD"
                 },
                 {
                     "text": "<strong>Technical Methodologies:</strong> Agile Development (Scrum), Scientific Computing, Data Analysis"
+                },
+                {
+                    "text": "<strong>Frameworks:</strong> Django, Flask, TensorFlow, PyTorch, SwiftUI"
                 }
             ]
         ]
