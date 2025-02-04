@@ -117,23 +117,12 @@
         "items": [
             [
                 {
-                    "text": "<strong>Transition Biomining - Predictive generation of qPCR primers (2025)</strong>"
+                    "text": "<strong>Transition Biomining & University of British Columbia - Predictive generation of qPCR primers (2025)</strong>"
                 },
                 {
                     "list": [
-                        "Developing AI model to find the best primer set for qPCR of environmental microbial community",
-                        "Leveraging model for successful critical mineral extraction"
-                    ]
-                }
-            ],
-            [
-                {
-                    "text": "<strong>University of British Columbia - Fast phylogenetic mapping of functional anchor genes (2025)</strong>"
-                },
-                {
-                    "list": [
-                        "Extending TreeSAPP phylogenetic profiling library with reference packages for several biogeochemical processes",
-                        "Developing scripts to efficiently parse TreeSAPP outputs and link disparate feature information across databases"
+                        "Leveraging AI to find optimal qPCR primer sets for environmental bacteria related to mineral resources",
+                        "Developing improved tools for creating reference datasets in TreeSAP phylogenetic software"
                     ]
                 }
             ],
@@ -151,12 +140,12 @@
             ],
             [
                 {
-                    "text": "<strong>Partners Personnel - Django Deployment (2022-2023)</strong>"
+                    "text": "<strong>Partners Personnel - Django ETL App (2022-2023)</strong>"
                 },
                 {
                     "list": [
+                        "Architected web-based ETL application to replace local MS Access program",
                         "Designed node-based pipeline architecture, enabling unit testing, serialization, and meeting per-client needs",
-                        "Implemented dynamic documentation generation and integration",
                         "Deployed with robust client front end and Azure AD integration"
                     ]
                 }
@@ -171,13 +160,13 @@
                     "text": "<strong>Languages:</strong> Python, C, C++, Java, Swift, Rust, Javascript"
                 },
                 {
-                    "text": "<strong>Services:</strong> AWS (DynamoDB, API Gateway, Lambda), GitHub Actions CI/CD"
+                    "text": "<strong>Services:</strong> AWS (DynamoDB, API Gateway, Lambda, S3), GitHub Actions CI/CD"
                 },
                 {
-                    "text": "<strong>Technical Methodologies:</strong> Agile Development (Scrum), Scientific Computing, Data Analysis"
+                    "text": "<strong>Technical Methodologies:</strong> Agile Development (Scrum), Scientific Computing, Data Analysis, Test Driven Development"
                 },
                 {
-                    "text": "<strong>Frameworks:</strong> Django, Flask, TensorFlow, PyTorch, SwiftUI"
+                    "text": "<strong>Frameworks:</strong> Django, Flask, TensorFlow, PyTorch, Numpy, Pandas, Scikit, Seaborn, CMake, Docker, SwiftUI"
                 }
             ]
         ]
