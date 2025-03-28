@@ -1,44 +1,36 @@
----
-title: Josh Bedwell
----
+<!doctype html>
+<html lang="en-us" data-bs-theme="auto">
 
-{% extends "layouts/base.njk" %}
+  {% include "snippets/head.njk" %}
 
-{% block content %}
-  <article class="mt-2 mb-3 my-md-3">
-    <header class="row justify-content-left align-items-center">
-      <div class="col-auto">
-        <h1>Josh Bedwell</h1>
-      </div>
-      <a href="https://linkedin.com/in/joshbedwell/" title="LinkedIn" class="h1 col-auto link-success">
-        <i class="bi bi-linkedin"></i>
-      </a>
-      <a href="https://github.com/rcxwhiz/" title="GitHub" class="h1 col-auto link-success">
-        <i class="bi bi-github"></i>
-      </a>
-      <a class="h1 link-success col-auto" href="mailto:joshbedwell01@gmail.com"><i class="bi bi-envelope-at-fill"></i></a>
-    </header>
-    <div class="my-3">
-      <p>Hi, I'm Josh! 🐝</p>
-      <p>
-        In 2023 I graduated with a Bachelor's degree in Computer Science & Software Engineering. In May 2025 I will graduate with my Master's degree in Molecular Science and Software Engineering at UC Berkeley. I have an academic background in chemical engineering, computer science, and software engineering.
-      </p>
-      <p>
-        My published research includes combustion simulation software, as well as human-computer interaction studies. I did the simulation paper with the BYU Chemical Engineering Department, and the HCI papers with the BYU Social Technology and Privacy Lab. I also worked on other projects in the STaPL including prototypes for neurodiverse inclusive social platform features. 
-      </p>
-      <p>
-        At BYU I worked on a capstone project with a company creating a new, web-based app for processing payroll files. I designed a node-based pipeline system which was capable of handling the different needs of different clients. Integrating this app and deploying it was very rewarding.
-      </p>
-    </div>
-  </article>
-  <article class="mt-2">
-    <div class="row justify-content-center mb-2 mb-sm-0">
-      <div class="col-auto">
-        <a class="btn btn-success" role="button" href="public/resume.pdf" download="Josh Bedwell Resume.pdf">Download Resume
-        <i class="bi bi-file-earmark-arrow-down"></i>
-      </a>
+  <body>
+
+    {% include "layouts/header.njk" %}
+
+    <div class="container">
+      <div class="row justify-content-center mt-4">
+        <div class="col-xl-8 col-lg-9 col-md-11 col-12">
+
+          <main>
+
+            {% include "layouts/about-me.njk" %}
+
+            {% include "layouts/education.njk" %}
+
+            {% include "layouts/projects.njk" %}
+
+            {% include "layouts/publications.njk" %}
+
+            {% include "layouts/experience.njk" %}
+
+            {% include "layouts/skills.njk" %}
+
+          </main>
+
+          {% include "snippets/footer.njk" %}
+
+        </div>
       </div>
     </div>
-    {% include "layouts/resume_items.njk" %}
-  </article>
-{% endblock %}
+  </body>
+</html>
